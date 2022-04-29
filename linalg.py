@@ -2,7 +2,10 @@ from fractions import Fraction
 import os
 
 def display(matrix):
-    os.system('clear')
+    if os.name == 'posix':
+        os.system('clear')
+    else:
+        os.system('cls')
     for row in matrix:
         for column,entry in enumerate(row):
 
